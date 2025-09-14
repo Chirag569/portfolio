@@ -1,0 +1,108 @@
+// src/components/Experience/Experience.jsx
+import React from "react";
+import { experiences } from "../../constants"; // Import your data
+
+const Experience = () => {
+  return (
+    <section
+      id="experience"
+      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-black clip-path-custom-2"
+    >
+      {/* Section Title */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
+        <div className="w-32 h-1 bg-blue-500 shadow-[0_0_15px_2px_rgba(37,99,235,0.6)] mx-auto mt-4"></div>
+        <p className="text-gray-400 mt-4 text-lg font-semibold">
+          A collection of my work experience and the roles I have taken in
+          various organizations
+        </p>
+      </div>
+
+      {/* Experience Timeline */}
+      <div className="relative">
+        {/* Vertical line */}
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 
+        w-1 bg-blue-500 shadow-[0_0_15px_2px_rgba(37,99,235,0.5)] h-full"></div>
+
+        {/* Experience Entries */}
+        {experiences.map((experience, index) => (
+          <div
+            key={experience.id}
+            className={`flex flex-col sm:flex-row items-center mb-16 ${
+              index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
+            }`}
+          >
+            {/* Timeline Circle */}
+            <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 
+            bg-gray-800 border-4 border-[#2563eb] shadow-[0_0_20px_2px_rgba(37,99,235,0.6)] 
+            w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
+              <img
+                src={experience.img}
+                alt={experience.company}
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+
+            {/* Content Section */}
+            <div
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-gray-600 
+              bg-black backdrop-blur-md shadow-[0_0_25px_3px_rgba(37,99,235,0.4)] ${
+                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
+              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
+            >
+              {/* Flex container for image and text */}
+              <div className="flex items-center space-x-6">
+                {/* Company Logo/Image */}
+                <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
+                  <img
+                    src={experience.img}
+                    alt={experience.company}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Role, Company Name, and Date */}
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                      {experience.role}
+                    </h3>
+                    <h4 className="text-md sm:text-sm text-gray-300">
+                      {experience.company}
+                    </h4>
+                  </div>
+                  {/* Date at the bottom */}
+                  <p className="text-sm text-gray-500 mt-2">
+                    {experience.date}
+                  </p>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="mt-4 text-gray-400">{experience.desc}</p>
+
+              {/* Skills Section */}
+              <div className="mt-4">
+                <h5 className="font-medium text-white">Skills:</h5>
+                <ul className="flex flex-wrap mt-2">
+                  {experience.skills.map((skill, index) => (
+                    <li
+                      key={index}
+                      className="bg-[#1e3a8a] text-white px-4 py-1 text-xs sm:text-sm 
+                      rounded-lg mr-2 mb-2 border border-gray-600 
+                      hover:bg-[#1e40af] transition-all"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Experience;

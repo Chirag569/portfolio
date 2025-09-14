@@ -51,7 +51,7 @@ const About = () => {
 
           {/* About Me Paragraph */}
           <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-          I am a full-stack developer with hands-on experience in designing and developing scalable web applications, chatbots, and data-driven platforms. Skilled in Next.js, JavaScript, React.js, Node.js, MongoDB, Prisma, and Tailwind CSS, I have built projects ranging from a WhatsApp Helpdesk Chatbot to SaaS platforms and clinic management systems. With proven experience in both frontend and backend development, I specialize in creating intuitive user interfaces, robust backend architectures, and integrating third-party APIs to deliver seamless and efficient solutions.
+          I am a full-stack developer with hands-on experience in designing and developing scalable web applications, chatbots, and data-driven platforms. Skilled in Next.js, JavaScript, React.js, Node.js, MongoDB, Prisma, and Tailwind CSS. I have built projects ranging from a WhatsApp Helpdesk Chatbot to SaaS platforms and clinic management systems. With proven experience in both frontend and backend development, I specialize in creating intuitive user interfaces, robust backend architectures, and integrating third-party APIs to deliver seamless and efficient solutions.
           </p>
 
           {/* Resume Button */}
